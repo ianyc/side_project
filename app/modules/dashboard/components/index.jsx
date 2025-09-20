@@ -36,11 +36,14 @@ const DashboardPage = () => {
 
 
   return (
-    <Peach
-      gender={'male'}
-      name={'alice'}
-      age={10}
-    />
+    <>
+      <Peach
+        gender={'male'}
+        name={'alice'}
+        age={10}>
+      </Peach>
+      <Button type="dashed">Dashed Button2</Button>
+    </>
     // <Flex gap="large">
     //   <Button
     //     type="text"

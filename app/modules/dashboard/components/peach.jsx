@@ -1,21 +1,36 @@
 import PropTypes from 'prop-types';
 import { Button } from 'antd';
-import { Typography } from 'antd';
+import { GiftOutlined } from '@ant-design/icons';
+import { useState } from 'react';
 
-const Peach = (props) => {
+const Peach = () => {
+  const [ ifClick, setIfClick ] = useState(false);
+  const clickMe = () => {
+    setIfClick(!ifClick);
+  }
 
-  const { gender, name, age } = props;
-  const { Title } = Typography;
+
   return (
     <>
-      <Button type="dashed">Dashed Button</Button>
-      <Title>h1. Ant Design</Title>
-      <Title level={2}>h2. Ant Design</Title>
-      <div>{gender}</div>
-      <div>{name}</div>
-      <div>{age}</div>
-      <div>123</div>
-      <span>456</span>
+      <Button color={'red'} variant="outlined"></Button>
+      <Button
+        className="button-field"
+        type="text"
+        icon={<GiftOutlined />}
+        style={{
+          fontSize: '50px',
+          marginTop: '20px',
+          marginLeft: '20px',
+          color: ifClick ? 'red' : 'green',
+        }}
+        onClick={() => {
+          clickMe();
+        }}
+        // onClick={clickMe()}
+      >
+        123
+      </Button>
+
     </>
   )
 };

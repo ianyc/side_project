@@ -42,7 +42,6 @@ const DashboardPage = () => {
         name={'alice'}
         age={10}>
       </Peach>
-      <Button type="dashed">Dashed Button2</Button>
     </>
     // <Flex gap="large">
     //   <Button

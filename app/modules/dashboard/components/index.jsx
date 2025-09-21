@@ -4,7 +4,7 @@ import Right from './right';
 import { Flex } from 'antd';
 
 const DashboardPage = () => {
-  const [messageObj, setMessageObj] = useState();
+  const [messageObjArray, setMessageObjArray] = useState([]);
 
   return (
     <Flex
@@ -12,10 +12,11 @@ const DashboardPage = () => {
       style={{ marginTop: '20px', marginLeft: '20px' }}
     >
       <Left
-        setMessageObj={setMessageObj}
+        messageObjArray={messageObjArray}
+        setMessageObjArray={setMessageObjArray}
       />
       <Right
-        messageObj={messageObj}
+        messageObjArray={messageObjArray}
       />
     </Flex>
   );

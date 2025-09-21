@@ -4,18 +4,21 @@ import PropTypes from 'prop-types';
 const Left = (props) => {
 
   const onFinish = (params) => {
-    const { setMessageObj } = props;
-    setMessageObj({
-      name: params.name,
-      message: params.message,
-    });
+    const { messageObjArray, setMessageObjArray } = props;
+
+    setMessageObjArray([
+      ...messageObjArray,
+      {
+        name: params.name,
+        message: params.message,
+      }]);
   };
 
   return (
     <Card
       hoverable
       title="Message Board"
-      style={{ width: 400 }}
+      style={{ width: 400, height: 300 }}
     >
       <Form
         name="messageBoard"
@@ -49,7 +52,8 @@ const Left = (props) => {
 };
 
 Left.propTypes = {
-  setMessageObj: PropTypes.func,
+  messageObjArray: PropTypes.array,
+  setMessageObjArray: PropTypes.func,
 };
 
 export default Left;

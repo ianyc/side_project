@@ -5,6 +5,8 @@ import { useState } from 'react';
 import { Button, Typography, Flex } from 'antd';
 import { FrownOutlined, SmileOutlined } from '@ant-design/icons';
 import Peach from './peach.jsx';
+import Left from './Left.jsx';
+import Right from './right.jsx';
 
 const DashboardPage = () => {
   const [isClick, setIsClick] = useState(false);
@@ -36,13 +38,10 @@ const DashboardPage = () => {
 
 
   return (
-    <>
-      <Peach
-        gender={'male'}
-        name={'alice'}
-        age={10}>
-      </Peach>
-    </>
+    <Flex gap="middle">
+      <Left></Left>
+      <Right></Right>
+    </Flex>
     // <Flex gap="large">
     //   <Button
     //     type="text"

@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 
 const Right = ({ userMessage }) => {
 
+  const ColorList = ['#f56a00', '#7265e6', '#ffbf00', '#00a2ae'];
+  const [color, setColor] = useState(ColorList[0]);
+
   return (
     <Flex >
       <Card title="留言板" style={{ width: 300 }}>

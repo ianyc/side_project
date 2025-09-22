@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Left = (props) => {
 
-  const onFinish = values => {
+  const onFinish = (values) => {
     console.log('Success:', values);
     const { setUserMessage } = props;
     setUserMessage({

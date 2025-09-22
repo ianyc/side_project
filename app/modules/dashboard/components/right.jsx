@@ -9,13 +9,13 @@ const Right = ({ userMessage }) => {
         <Row>
           <Col span={8}>
             <Flex vertical>
-              <Avatar style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}>Remi
+              <Avatar style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}>{userMessage?.username || '?'}
               </Avatar>
-              <Input style={{ width: '100%' }} value={userMessage.username} />
+              <Input style={{ width: '100%' }} value={userMessage?.username || ''} />
             </Flex>
           </Col>
           <Col span={16}>
-            <Input value={userMessage.message} />
+            <Input value={userMessage?.message || ''} />
           </Col>
         </Row>
       </Card>

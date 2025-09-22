@@ -10,8 +10,7 @@ import Right from './right.jsx';
 const DashboardPage = () => {
 
   const [userMessage, setUserMessage] = useState({
-    username: '',
-    message: '',
+
   });
 
 /*   const [isClick, setIsClick] = useState(false);
@@ -45,7 +44,7 @@ const DashboardPage = () => {
   return (
     <Flex gap="middle">
       <Left setUserMessage={setUserMessage}></Left>
-      <Right userMessage={userMessage}></Right>
+      {userMessage && <Right userMessage={userMessage}></Right>}
     </Flex>
     // <Flex gap="large">
     //   <Button

@@ -2,10 +2,6 @@ import { Card, Space } from 'antd';
 import { Button, Form, Input } from 'antd';
 import PropTypes from 'prop-types';
 
-const onFinishFailed = errorInfo => {
-  console.log('Failed:', errorInfo);
-};
-
 const Left = (props) => {
 
   const onFinish = values => {
@@ -15,6 +11,10 @@ const Left = (props) => {
       username: values.username,
       message: values.message,
     })
+  };
+
+  const onFinishFailed = errorInfo => {
+    console.log('Failed:', errorInfo);
   };
 
   return (

@@ -9,9 +9,7 @@ import Right from './right.jsx';
 
 const DashboardPage = () => {
 
-  const [userMessage, setUserMessage] = useState({
-
-  });
+  const [userMessage, setUserMessage] = useState();
 
 /*   const [isClick, setIsClick] = useState(false);
   const { Title } = Typography;

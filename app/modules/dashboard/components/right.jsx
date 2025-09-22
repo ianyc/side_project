@@ -1,6 +1,8 @@
 import { Card, Avatar, Col, Row, Input, Flex } from 'antd';
+import PropTypes from 'prop-types';
 
-const Right = ({ username, message }) => {
+const Right = ({ userMessage }) => {
+
   return (
     <Flex >
       <Card title="留言板" style={{ width: 300 }}>
@@ -9,11 +11,11 @@ const Right = ({ username, message }) => {
             <Flex vertical>
               <Avatar style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}>Remi
               </Avatar>
-              <Input style={{ width: '20%' }} value={username} />
+              <Input style={{ width: '100%' }} value={userMessage.username} />
             </Flex>
           </Col>
           <Col span={16}>
-            <Input value={message} />
+            <Input value={userMessage.message} />
           </Col>
         </Row>
       </Card>
@@ -23,3 +25,7 @@ const Right = ({ username, message }) => {
 };
 
 export default Right;
+
+Right.propTypes = {
+  userMessage: PropTypes.obj,
+};

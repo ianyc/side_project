@@ -1,14 +1,22 @@
 import { Card, Space } from 'antd';
 import { Button, Form, Input } from 'antd';
+import PropTypes from 'prop-types';
 
-const onFinish = values => {
-  console.log('Success:', values);
-};
 const onFinishFailed = errorInfo => {
   console.log('Failed:', errorInfo);
 };
 
-const Left = ( ) => {
+const Left = (props) => {
+
+  const onFinish = values => {
+    console.log('Success:', values);
+    const { setUserMessage } = props;
+    setUserMessage({
+      username: values.username,
+      message: values.message,
+    })
+  };
+
   return (
     <Space direction="vertical" size={16}>
       <Card title="即時通" style={{ width: 300 }}>
@@ -36,7 +44,7 @@ const Left = ( ) => {
               name="message"
               rules={[{ required: true, message: 'Please input your message!' }]}
             >
-              <Input/>
+              <Input />
             </Form.Item>
 
             <Form.Item label={null}>
@@ -54,3 +62,7 @@ const Left = ( ) => {
 };
 
 export default Left;
+
+Left.propTypes = {
+  setUserMessage: PropTypes.func,
+};

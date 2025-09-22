@@ -3,13 +3,18 @@
 
 import { useState } from 'react';
 import { Button, Typography, Flex } from 'antd';
-import { FrownOutlined, SmileOutlined } from '@ant-design/icons';
 import Peach from './peach.jsx';
 import Left from './Left.jsx';
 import Right from './right.jsx';
 
 const DashboardPage = () => {
-  const [isClick, setIsClick] = useState(false);
+
+  const [userMessage, setUserMessage] = useState({
+    username: '',
+    message: '',
+  });
+
+/*   const [isClick, setIsClick] = useState(false);
   const { Title } = Typography;
 
   const car2 = {
@@ -32,15 +37,15 @@ const DashboardPage = () => {
     console.log('type=' + type);
     console.log(`type=${type}`);
     console.log(car.driver[0]);
-  }
+  } */
 
-  fc1();
+  // fc1();
 
 
   return (
     <Flex gap="middle">
-      <Left></Left>
-      <Right></Right>
+      <Left setUserMessage={setUserMessage}></Left>
+      <Right userMessage={userMessage}></Right>
     </Flex>
     // <Flex gap="large">
     //   <Button

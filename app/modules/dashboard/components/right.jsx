@@ -9,10 +9,10 @@ const Right = ({ userMessage }) => {
     <Flex >
       <Card title="留言板" style={{ width: 300 }}>
         {userMessage.map((msg, index) => (
-          <Row style={{ marginBottom: '2px'}}>
+          <Row style={{ marginBottom: '2px' }} key={index}>
             <Col span={8}>
               <Flex vertical>
-                <Avatar style={{ backgroundColor: colorList[index%colorList.length], color: 'white' }}>{msg.username}
+                <Avatar style={{ backgroundColor: colorList[index % colorList.length], color: 'white' }}>{msg.username}
                 </Avatar>
                 <Input style={{ width: '100%' }} value={msg.username} />
               </Flex>

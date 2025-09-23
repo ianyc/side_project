@@ -9,9 +9,9 @@ const Left = (props) => {
     setUserMessage([
       ...userMessage,
       {
-      username: values.username,
-      message: values.message,
-    }])
+        username: values.username,
+        message: values.message,
+      }])
   };
 
   const onFinishFailed = errorInfo => {

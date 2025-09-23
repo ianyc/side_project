@@ -5,12 +5,13 @@ import PropTypes from 'prop-types';
 const Left = (props) => {
 
   const onFinish = (values) => {
-    console.log('Success:', values);
-    const { setUserMessage } = props;
-    setUserMessage({
+    const { userMessage, setUserMessage } = props;
+    setUserMessage([
+      ...userMessage,
+      {
       username: values.username,
       message: values.message,
-    })
+    }])
   };
 
   const onFinishFailed = errorInfo => {
@@ -64,5 +65,6 @@ const Left = (props) => {
 export default Left;
 
 Left.propTypes = {
+  userMessage: PropTypes.object,
   setUserMessage: PropTypes.func,
 };

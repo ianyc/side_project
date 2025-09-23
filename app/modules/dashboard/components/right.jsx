@@ -3,24 +3,25 @@ import PropTypes from 'prop-types';
 
 const Right = ({ userMessage }) => {
 
-  const ColorList = ['#f56a00', '#7265e6', '#ffbf00', '#00a2ae'];
-  const [color, setColor] = useState(ColorList[0]);
+  const colorList = ['#f56a00', '#7265e6', '#ffbf00', '#00a2ae'];
 
   return (
     <Flex >
       <Card title="留言板" style={{ width: 300 }}>
-        <Row>
-          <Col span={8}>
-            <Flex vertical>
-              <Avatar style={{ backgroundColor: '#fde3cf', color: '#f56a00' }}>{userMessage.username}
-              </Avatar>
-              <Input style={{ width: '100%' }} value={userMessage.username} />
-            </Flex>
-          </Col>
-          <Col span={16}>
-            <Input value={userMessage.message} />
-          </Col>
-        </Row>
+        {userMessage.map((msg, index) => (
+          <Row style={{ marginBottom: '2px'}}>
+            <Col span={8}>
+              <Flex vertical>
+                <Avatar style={{ backgroundColor: colorList[index%colorList.length], color: 'white' }}>{msg.username}
+                </Avatar>
+                <Input style={{ width: '100%' }} value={msg.username} />
+              </Flex>
+            </Col>
+            <Col span={16}>
+              <Input value={msg.message} />
+            </Col>
+          </Row>
+        ))}
       </Card>
 
     </Flex>
@@ -30,5 +31,5 @@ const Right = ({ userMessage }) => {
 export default Right;
 
 Right.propTypes = {
-  userMessage: PropTypes.obj,
+  userMessage: PropTypes.array,
 };
